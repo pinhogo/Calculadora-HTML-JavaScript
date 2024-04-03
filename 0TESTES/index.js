@@ -1,16 +1,19 @@
 function insere(num){
-    if(num = '*' || '/'|| '+/-'||)
-    var operacao = document.querySelector('.resultado'); 
-    operacao.innerHTML += num;
-}
-function limpa(){
+ 
     var operacao = document.querySelector('.resultado'); // Seleciona o elemento com a classe 'resultado'
-    operacao.innerHTML = ''; // Limpa o conteúdo da operação
+    operacao.innerHTML += num; // Obtém o conteúdo da operação
+     
+}
+
+function limpa(){
+    var operacao = document.querySelector('.resultado'); 
+    operacao.innerHTML = ''; 
     
-    var operacaoCompleta = document.querySelector('.operacao'); // Seleciona o elemento com a classe 'operacao'
-    operacaoCompleta.innerHTML = ''; // Limpa o conteúdo da operação completa
+    var historico = document.querySelector('.operacao');
+    historico.innerHTML = ''; 
     
 }
+
 function excluir(){
     var operacao = document.querySelector('.resultado');
     var conteudo = operacao.innerHTML;
@@ -28,47 +31,28 @@ function calcular() {
         var resultado = eval(conteudo);
         document.querySelector('.resultado').innerHTML = resultado;
         document.querySelector('.operacao').innerHTML = conteudo;
-        
-    }
-    
+        }if(conteudo.includes('%')){
+            var partes = conteudo.split('%'); // divide em dois numeros pelo %
+            var numero = parseFloat(partes[0]); // Transformou a string em numero e selecionou a parte da esquerda
+            var porcentagem = parseFloat(partes[1]); // fez o mesmo c a parte da direita
+            resultado = (numero * porcentagem) / 100; 
+            document.querySelector('.resultado').innerHTML = resultado;
+            document.querySelector('.operacao').innerHTML = conteudo;
+        }
 }
 
-function calcular2() {
-    var operacao = document.querySelector('.resultado'); // Seleciona o elemento com a classe 'resultado'
-    var conteudo = operacao.innerHTML; // Obtém o conteúdo da operação
-    
-    if (conteudo.length > 0) {
-        
-        var resultado;
-        if (conteudo.includes('%')) {
-            // Se houver o símbolo '%', realiza o cálculo de porcentagem
-            var partes = conteudo.split('%'); // Divide a operação pelo símbolo '%'
-            var numero = parseFloat(partes[0]); // Obtém o número antes do '%'
-            var porcentagem = parseFloat(partes[1]); // Obtém a porcentagem após o '%'
-            resultado = (numero * porcentagem) / 100; // Calcula a porcentagem
-        } else {
-            // Caso contrário, calcula a operação normalmente
-            resultado = eval(conteudo); // Calcula o resultado da operação usando eval()
-        }
-        
-        operacao.innerHTML = resultado; // Exibe o resultado na tela
-        document.querySelector('.operacao').innerHTML = conteudo;
-    }
-}
 
 function inverter() {
-    var operacao = document.querySelector('.resultado'); // Seleciona o elemento com a classe 'resultado'
-    var conteudo = operacao.innerHTML; // Obtém o conteúdo da operação
+    var operacao = document.querySelector('.resultado'); 
+    var conteudo = operacao.innerHTML;
     
     if (conteudo.length > 0) {
-        // Verifica se há conteúdo na operação
-        var resultado = parseFloat(conteudo); // Converte o conteúdo para um número
+        var resultado = parseFloat(conteudo);
         
-        // Inverte o sinal do número
         if (resultado !== 0) {
             resultado = -resultado;
         }
         
-        operacao.innerHTML = resultado; // Exibe o número com o sinal invertido na tela
+        operacao.innerHTML = resultado;
     }
 }
