@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <section class="calculadora">
+        <div class="tela">
+            <p id="operacao"></p>
+            <p id="resultado"></p>
+        </div>
+        <div class="teclas">
+            <table>
+
+                <tr>
+                    <td><button class="grey" onclick="limpa()">C</button></td>
+                    <td><button class="grey" onclick="inverter()">+/-</button></td>
+                    <td><button class="grey" onclick="insere('%')">%</button></td>
+
+                    <td><button class="blue" onclick="insere('/')">÷</button></td>
+                </tr>
+                <tr>
+                    <td><button class="black" onclick="insere(7)">7</button></td>
+                    <td><button class="black" onclick="insere(8)">8</button></td>
+                    <td><button class="black" onclick="insere(9)">9</button></td>
+
+                    <td><button class="blue" onclick="insere('*')">X</button></td>
+                </tr>
+                <tr>
+                    <td><button class="black" onclick="insere(4)">4</button></td>
+                    <td><button class="black" onclick="insere(5)">5</button></td>
+                    <td><button class="black" onclick="insere(6)">6</button></td>
+
+                    <td><button class="blue" onclick="insere('-')">-</button></td>
+                </tr>
+                <tr>
+                    <td><button class="black" onclick="insere(1)">1</button></td>
+                    <td><button class="black" onclick="insere(2)">2</button></td>
+                    <td><button class="black" onclick="insere(3)">3</button></td>
+
+                    <td><button class="blue" onclick="insere('+')">+</button></td>
+                </tr>
+                <tr>
+                    <td><button class="black" onclick="insere('.')">.</button></td>
+                    <td><button class="black" onclick="insere(0)">0</button></td>
+                    <td><button class="black" onclick="excluir()">..</button>
+                    </td>
+
+                    <td><button class="blue" onclick="calcular2()">=</button></td>
+                </tr>
+            </table>
+
+        </div>
+    </section>
+    <script language="JavaScript" src="index.js"></script>
+</body>
+
+</html>
