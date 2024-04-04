@@ -2,6 +2,7 @@ function insere(num){
     var operacao = document.querySelector('.resultado'); 
     operacao.innerHTML += num; 
 }
+
 function limpa(){
     var operacao = document.querySelector('.resultado'); // Seleciona o elemento com a classe 'resultado'
     operacao.innerHTML = ''; // Limpa o conteúdo da operação
@@ -10,6 +11,7 @@ function limpa(){
     operacaoCompleta.innerHTML = ''; // Limpa o conteúdo da operação completa
     
 }
+
 function excluir(){
     var operacao = document.querySelector('.resultado');
     var conteudo = operacao.innerHTML;
