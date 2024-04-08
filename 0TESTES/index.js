@@ -10,7 +10,8 @@ function black(){
 
 function insere(num){
     var operacao = document.querySelector('.resultado'); 
-    operacao.innerHTML += num; 
+    if (operacao.innerHTML.toString().length < 10) operacao.innerHTML += num;
+     
 }
 
 function limpa(){

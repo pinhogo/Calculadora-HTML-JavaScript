@@ -1,0 +1,7 @@
+taks
+1 arrumar carcters maximo
+2 imprimir um alert caso passe do maximo de carcteres
+3 integrar o text com o arquivo final
+4 fazer um controle de excessoes
+5 arrumar os botoes
+6 integrar os botoes com o tecladogit
