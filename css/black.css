@@ -111,8 +111,8 @@ table button:hover{
     display: flex; flex-direction: column;
     width: 370px; height: 225px;
     border-radius: 5px;
-    justify-content: flex-end; align-items: flex-end;
-    
+    justify-content: flex-end; 
+    align-items: flex-end;
     flex-wrap: wrap;
     background:rgb(29, 29, 31);
 }
@@ -127,9 +127,7 @@ table button:hover{
     font-weight: normal;
     margin: 0;
     padding: 0;
-    padding-top: 0;
-
-    
+    padding-top: 0;    
 }
 .resultado{
     background-color: rgba(0,0,0,0);

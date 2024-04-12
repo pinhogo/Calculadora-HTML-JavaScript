@@ -76,7 +76,7 @@ function calcular() {
             }
 
             if (!isFinite(resultado)) {
-                throw new Error("Divisão por zero!");
+                throw new Error();
             }
 
             operacao.innerHTML = resultado;
