@@ -1,11 +1,14 @@
 function white() {
     var stilo = document.getElementById('Style')
-    stilo.href = "../css1/white.css";
+    stilo.href = "../css/white.css";
+    document.getElementById('delete').innerHTML = "<img src='../img/delete2.png' alt='delete'>";
+    
 }
 
 function black() {
     var stilo = document.getElementById('Style')
-    stilo.href = "../css1/black.css";
+    stilo.href = "../css/black.css";
+    document.getElementById('delete').innerHTML = "<img src='../img/delete.png' alt='delete'>";
 }
 
 function insere(num) {
@@ -82,7 +85,6 @@ function calcular() {
         } catch (error) {
 
             operacao.innerHTML = "ERR0R!";
-            console.error("Erro durante a avaliação da expressão:", error);
         }
     }
 }

@@ -87,6 +87,7 @@ body{
 }
 .blue{
     background:rgb(44, 60, 206);
+    color: aliceblue;
 }
 
 table button{
