@@ -68,9 +68,9 @@ function calcular() {
                 resultado = eval(conteudo);
             }
 
-            if (resultado.toString().length > 15) {
+            if (resultado.toString().length > 10) {
 
-                resultado = resultado.toExponential(12);
+                resultado = resultado.toExponential(8);
             }
 
             if (!isFinite(resultado)) {
