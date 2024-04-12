@@ -22,11 +22,10 @@ function insere(num) {
 }
 
 function limpa() {
-    var operacao = document.querySelector('.resultado'); // Seleciona o elemento com a classe 'resultado'
-    operacao.innerHTML = ''; // Limpa o conteúdo da operação
-
-    var operacaoCompleta = document.querySelector('.operacao'); // Seleciona o elemento com a classe 'operacao'
-    operacaoCompleta.innerHTML = ''; // Limpa o conteúdo da operação completa
+    var operacao = document.querySelector('.resultado');
+    operacao.innerHTML = ''; 
+    var operacaoCompleta = document.querySelector('.operacao'); 
+    operacaoCompleta.innerHTML = ''; 
 
 }
 
@@ -91,22 +90,21 @@ function calcular() {
 
 
 function inverter() {
-    var operacao = document.querySelector('.resultado'); // Seleciona o elemento com a classe 'resultado'
-    var conteudo = operacao.innerHTML; // Obtém o conteúdo da operação
+    var operacao = document.querySelector('.resultado'); 
+    var conteudo = operacao.innerHTML;
 
     if (conteudo.length > 0) {
-        // Verifica se há conteúdo na operação
-        var resultado = parseFloat(conteudo); // Converte o conteúdo para um número
+        
+        var resultado = parseFloat(conteudo); 
 
-        // Inverte o sinal do número
+    
         if (resultado !== 0) {
             resultado = -resultado;
         }
 
-        operacao.innerHTML = resultado; // Exibe o número com o sinal invertido na tela
+        operacao.innerHTML = resultado;
     }
 }
-
 
     document.addEventListener('keydown', function (event) {
         var tecla = event.key;
