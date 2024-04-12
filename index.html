@@ -5,32 +5,34 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Calculadora</title>
-  <link id="Style" rel="stylesheet" href="css/black.css" />
+  <link rel="icon" href="https://www.ages.pucrs.br/wp-content/uploads/2020/03/cropped-logo-ages-32x32.png" type="image/x-icon">
+  <link id="Style" rel="stylesheet" href="/css1/black.css" />
 
 </head>
 
 <body>
   <header>
-    <h1>Sprint 1: Calculadora</h1>
+   <H1>Sprint 1</H1>
   </header>
-  <hr>
+ 
 
   <section class="calculadora">
 
-    <section class="Toggle">
-            <div class="Toggle2"><img src="img/Off.png" alt="botao"></div>
-            <div class="Moon"><img src="img/Moon.png" alt="botao"></div>
-            <button class="LeftButton" onclick="white()"><img src="img/O.png" alt="botao"></button>
-          </section>
-            <button class="RigthButton" onclick="black()"><img src="img/O2.png" alt="botao"></button>
-    
+    <section class="ToggleBlack">
+            <div class="fundo1"><img src="../img/Off.png" alt="botao"></div>
+            <button class="LeftButton" onclick="white()"><img src="../img/O.png" alt="botao"></button>
+    </section>
+    <section class="ToggleWhite">
+          <div class="fundo2"><img src="../img/On.png" alt="botao"></div>
+            <button class="RigthButton" onclick="black()"><img src="../img/O2.png" alt="botao"></button>
+    </section>
 
 
 
     
     <section class="tela">
-      <div class="operacao"></input>
-      <div class="resultado"></input>
+      <div type="text" class="operacao" maxlength="2"></div>
+      <div type="text" class="resultado" maxlength="2"></div>
     </section>
 
     <div class="teclas">
@@ -67,16 +69,16 @@
         <tr>
           <td><button class="black" onclick="insere('.')">.</button></td>
           <td><button class="black" onclick="insere(0)">0</button></td>
-          <td><button class="black" onclick="excluir()">..</button>
+          <td><button class="black" onclick="excluir()"><<img src="../img/delete.png" alt="delete"></button>
           </td>
 
-          <td><button class="blue" onclick="calcular2()">=</button></td>
+          <td><button class="blue" onclick="calcular()">=</button></td>
         </tr>
       </table>
 
     </div>
   </section>
-  <script language="JavaScript" src="JS/functions.js"></script>
+  <script language="JavaScript" src="../JS/functions.js"></script>
 </body>
 
 </html>

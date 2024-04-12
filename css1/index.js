@@ -10,7 +10,11 @@ function black(){
 
 function insere(num){
     var operacao = document.querySelector('.resultado'); 
-    if (operacao.innerHTML.toString().length < 10) operacao.innerHTML += num;
+    if (operacao.innerHTML.toString().length < 16) {
+        operacao.innerHTML += num;
+} else {
+    alert("Você atingiu o limite de 16 caracteres!");
+}
      
 }
 
@@ -32,7 +36,7 @@ function excluir(){
     }
 }
 
-function calcular() {
+function calcular1() {
     var operacao = document.querySelector('.resultado'); 
     var conteudo = operacao.innerHTML; 
     
@@ -45,28 +49,45 @@ function calcular() {
     
 }
 
-function calcular2() {
-    var operacao = document.querySelector('.resultado'); // Seleciona o elemento com a classe 'resultado'
-    var conteudo = operacao.innerHTML; // Obtém o conteúdo da operação
+function calcular() {
+    var operacao = document.querySelector('.resultado'); 
+    var conteudo = operacao.innerHTML;
     
     if (conteudo.length > 0) {
-        
+        try
+        {
         var resultado;
+
         if (conteudo.includes('%')) {
-            // Se houver o símbolo '%', realiza o cálculo de porcentagem
-            var partes = conteudo.split('%'); // Divide a operação pelo símbolo '%'
-            var numero = parseFloat(partes[0]); // Obtém o número antes do '%'
-            var porcentagem = parseFloat(partes[1]); // Obtém a porcentagem após o '%'
-            resultado = (numero * porcentagem) / 100; // Calcula a porcentagem
+        
+            var partes = conteudo.split('%'); 
+            var numero = parseFloat(partes[0]); 
+            var porcentagem = parseFloat(partes[1]); 
+            resultado = (numero * porcentagem) / 100; 
         } else {
-            // Caso contrário, calcula a operação normalmente
-            resultado = eval(conteudo); // Calcula o resultado da operação usando eval()
+            
+            resultado = eval(conteudo); 
         }
         
-        operacao.innerHTML = resultado; // Exibe o resultado na tela
+        if (resultado.toString().length > 15) {
+            
+            resultado = resultado.toExponential(12);
+        }
+
+        if (!isFinite(resultado)) {
+            throw new Error("Divisão por zero!");
+        }
+        
+        operacao.innerHTML = resultado; 
         document.querySelector('.operacao').innerHTML = conteudo;
+    } catch (error) {
+        
+        operacao.innerHTML = "ERR0R!";
+        console.error("Erro durante a avaliação da expressão:", error);
+        }
     }
 }
+
 
 function inverter() {
     var operacao = document.querySelector('.resultado'); // Seleciona o elemento com a classe 'resultado'
